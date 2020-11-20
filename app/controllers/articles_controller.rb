@@ -1,4 +1,9 @@
 class ArticlesController < ApplicationController
+def show
+	@article = Article.find(params[:id])
+end
+
+=begin
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   # GET /articles
@@ -71,4 +76,5 @@ class ArticlesController < ApplicationController
     def article_params
       params.require(:article).permit(:title, :description)
     end
+=end
 end
